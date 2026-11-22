@@ -17,6 +17,33 @@ namespace National_Bank.Contexts
         {
             modelBuilder.ApplyConfigurationsFromAssembly
                 (typeof(AppDbContext).Assembly);
+
+            modelBuilder.Entity<Manager>().HasData(
+                new Manager
+                {
+                    Id = 1,
+                    FullName = "Ahmed Mohamed",
+                    Email = "ahmed@bank.com",
+                    PhoneNumber = "01012345678",
+                    HireDate = new DateTime(2020, 1, 15)
+                },
+                new Manager
+                {
+                    Id = 2,
+                    FullName = "Sara Ali",
+                    Email = "sara@bank.com",
+                    PhoneNumber = "01098765432",
+                    HireDate = new DateTime(2021, 3, 10)
+                },
+                new Manager
+                {
+                    Id = 3,
+                    FullName = "Omar Hassan",
+                    Email = "omar@bank.com",
+                    PhoneNumber = "01112345678",
+                    HireDate = new DateTime(2022, 6, 20)
+                }
+            );
         }
 
         public DbSet<Branch> Branches { get; set; }

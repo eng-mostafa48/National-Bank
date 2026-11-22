@@ -73,6 +73,32 @@ namespace National_Bank.Migrations
                         .IsUnique();
 
                     b.ToTable("Branches");
+
+                    b.HasData(
+                        new
+                        {
+                            Code = "BR001",
+                            Address = "Tanta, Gharbia",
+                            ManagerId = 1,
+                            Name = "Tanta Main Branch",
+                            PhoneNumber = "0401234567"
+                        },
+                        new
+                        {
+                            Code = "BR002",
+                            Address = "Cairo",
+                            ManagerId = 2,
+                            Name = "Cairo Branch",
+                            PhoneNumber = "0223456789"
+                        },
+                        new
+                        {
+                            Code = "BR003",
+                            Address = "Alexandria",
+                            ManagerId = 3,
+                            Name = "Alexandria Branch",
+                            PhoneNumber = "0345678901"
+                        });
                 });
 
             modelBuilder.Entity("National_Bank.Models.Customer", b =>
@@ -164,6 +190,32 @@ namespace National_Bank.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Managers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Email = "ahmed@bank.com",
+                            FullName = "Ahmed Mohamed",
+                            HireDate = new DateTime(2020, 1, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "01012345678"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Email = "sara@bank.com",
+                            FullName = "Sara Ali",
+                            HireDate = new DateTime(2021, 3, 10, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "01098765432"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Email = "omar@bank.com",
+                            FullName = "Omar Hassan",
+                            HireDate = new DateTime(2022, 6, 20, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            PhoneNumber = "01112345678"
+                        });
                 });
 
             modelBuilder.Entity("National_Bank.Models.Transaction", b =>
